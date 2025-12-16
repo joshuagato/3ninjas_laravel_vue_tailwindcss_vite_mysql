@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@inertiajs/inertia':
+        specifier: ^0.11.1
+        version: 0.11.1
       '@inertiajs/inertia-vue3':
         specifier: ^0.6.0
         version: 0.6.0(@inertiajs/inertia@0.11.1)(vue@3.5.25)
@@ -25,8 +28,8 @@ importers:
         version: 0.2.8(vue@3.5.25)
     devDependencies:
       '@inertiajs/vue3':
-        specifier: ^1.0.0
-        version: 1.3.0(vue@3.5.25)
+        specifier: ^2.3.1
+        version: 2.3.1(vue@3.5.25)
       '@tailwindcss/forms':
         specifier: ^0.5.3
         version: 0.5.10(tailwindcss@3.4.19)
@@ -219,8 +222,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@inertiajs/core@1.3.0':
-    resolution: {integrity: sha512-TJ8R1eUYY473m9DaKlCPRdHTdznFWTDuy5VvEzXg3t/hohbDQedLj46yn/uAqziJPEUZJrSftZzPI2NMzL9tQA==}
+  '@inertiajs/core@2.3.1':
+    resolution: {integrity: sha512-K/v/e+HDDkC3FFLbi6GePU49cvYtRKx+KexslotudR3k/JwpKuwseo+sp4tSVPr3FkEfIP7VcC8kHOXSrOmobQ==}
 
   '@inertiajs/inertia-vue3@0.6.0':
     resolution: {integrity: sha512-qhPBtd/G0VS7vVVbYw1rrqKB6JqRusxqt+5ec2GLmK6t7fTlBBnZ3KsakmGZLSM1m1OGkNcfn4ifmCk3zfA8RQ==}
@@ -233,8 +236,8 @@ packages:
     resolution: {integrity: sha512-btmV53c54oW4Z9XF0YyTdIUnM7ue0ONy3/KJOz6J1C5CYIwimiKfDMpz8ZbGJuxS+SPdOlNsqj2ZhlHslpJRZg==}
     deprecated: Package no longer supported. Contact Support at https://www.npmjs.com/support for more info.
 
-  '@inertiajs/vue3@1.3.0':
-    resolution: {integrity: sha512-GizqdCM3u4JWunit3uUbW4fEmTLKQTi1W7VvPRdrNy8XDt4Qy2cCmfFjq+aH5tHBSS3fI/ngYuhN7XvwqNaKvw==}
+  '@inertiajs/vue3@2.3.1':
+    resolution: {integrity: sha512-UwLL7bITpw4jupgcs5TK+INxK1XLwhy69qQufiBxyE8lfDuhsJ/fvZYkZEYchvy24rpqhM5RVU69JabaGaspMQ==}
     peerDependencies:
       vue: ^3.0.0
 
@@ -383,6 +386,12 @@ packages:
 
   '@types/estree@1.0.8':
     resolution: {integrity: sha512-dWHzHa2WqEXI/O1E9OjrocMTKJl2mSrEolh1Iomrv6U+JuNwaHXsXx9bLu5gG7BUWFIN0skIQJQ/L1rIex4X6w==}
+
+  '@types/lodash-es@4.17.12':
+    resolution: {integrity: sha512-0NgftHUcV4v34VhXm8QBSftKVXtbkBG3ViCjs6+eJ5a6y6Mi/jiFGPc1sC7QK+9BFhWrURE3EOggmWaSxL9OzQ==}
+
+  '@types/lodash@4.17.21':
+    resolution: {integrity: sha512-FOvQ0YPD5NOfPgMzJihoT+Za5pdkDJWcbpuj1DjaKZIr/gxodQjY/uWEFlTNqW2ugXHUiL8lRQgw63dzKHZdeQ==}
 
   '@types/web-bluetooth@0.0.20':
     resolution: {integrity: sha512-g9gZnnXVq7gM7v3tJCWV/qw7w+KeOlSHAhgF9RytFyifW6AF61hdT2ucrYhPq9hLs5JIryeupHV3qGk95dH9ow==}
@@ -679,6 +688,9 @@ packages:
     resolution: {integrity: sha512-/imKNG4EbWNrVjoNC/1H5/9GFy+tqjGBHCaSsN+P2RnPqjsLmv6UD3Ej+Kj8nBWaRAwyk7kK5ZUc+OEatnTR3A==}
     hasBin: true
 
+  laravel-precognition@1.0.0:
+    resolution: {integrity: sha512-hvXPT7dayCQAidxnsY0hab9Q+Y2rsh7xRpH9uiFtXN8Dekc3tIZt+NrxrOZ9N5SwHBmRBze/Bv+ElfXac0kD6g==}
+
   laravel-vite-plugin@1.3.0:
     resolution: {integrity: sha512-P5qyG56YbYxM8OuYmK2OkhcKe0AksNVJUjq9LUZ5tOekU9fBn9LujYyctI4t9XoLjuMvHJXXpCoPntY1oKltuA==}
     engines: {node: ^18.0.0 || ^20.0.0 || >=22.0.0}
@@ -744,9 +756,6 @@ packages:
   normalize-path@3.0.0:
     resolution: {integrity: sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==}
     engines: {node: '>=0.10.0'}
-
-  nprogress@0.2.0:
-    resolution: {integrity: sha512-I19aIingLgR1fmhftnbWWO3dXc0hSxqHQHQb3H8m+K3TnEn/iSeTZZOyvKXWqQESMwuUVnatlCnZdLBZZt2VSA==}
 
   object-assign@4.1.1:
     resolution: {integrity: sha512-rJgTQnkUnH1sFw8yT6VSU3zD3sWmu6sZhIseY8VX+GRu3P6F7Fu+JNDoXfklElbLJSnc3FUQHVe4cU5hj+BcUg==}
@@ -1098,11 +1107,12 @@ snapshots:
   '@esbuild/win32-x64@0.21.5':
     optional: true
 
-  '@inertiajs/core@1.3.0':
+  '@inertiajs/core@2.3.1':
     dependencies:
+      '@types/lodash-es': 4.17.12
       axios: 1.13.2
-      deepmerge: 4.3.1
-      nprogress: 0.2.0
+      laravel-precognition: 1.0.0
+      lodash-es: 4.17.21
       qs: 6.14.0
     transitivePeerDependencies:
       - debug
@@ -1122,11 +1132,12 @@ snapshots:
     transitivePeerDependencies:
       - debug
 
-  '@inertiajs/vue3@1.3.0(vue@3.5.25)':
+  '@inertiajs/vue3@2.3.1(vue@3.5.25)':
     dependencies:
-      '@inertiajs/core': 1.3.0
-      lodash.clonedeep: 4.5.0
-      lodash.isequal: 4.5.0
+      '@inertiajs/core': 2.3.1
+      '@types/lodash-es': 4.17.12
+      laravel-precognition: 1.0.0
+      lodash-es: 4.17.21
       vue: 3.5.25
     transitivePeerDependencies:
       - debug
@@ -1231,6 +1242,12 @@ snapshots:
       tailwindcss: 3.4.19
 
   '@types/estree@1.0.8': {}
+
+  '@types/lodash-es@4.17.12':
+    dependencies:
+      '@types/lodash': 4.17.21
+
+  '@types/lodash@4.17.21': {}
 
   '@types/web-bluetooth@0.0.20': {}
 
@@ -1566,6 +1583,13 @@ snapshots:
 
   jiti@1.21.7: {}
 
+  laravel-precognition@1.0.0:
+    dependencies:
+      axios: 1.13.2
+      lodash-es: 4.17.21
+    transitivePeerDependencies:
+      - debug
+
   laravel-vite-plugin@1.3.0(vite@5.4.21):
     dependencies:
       picocolors: 1.1.1
@@ -1614,8 +1638,6 @@ snapshots:
   node-releases@2.0.27: {}
 
   normalize-path@3.0.0: {}
-
-  nprogress@0.2.0: {}
 
   object-assign@4.1.1: {}
 
