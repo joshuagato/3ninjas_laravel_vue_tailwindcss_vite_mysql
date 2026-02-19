@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
     <head>
+{{--  This one does not work, but the one in app.blade.php works well   --}}
         <!-- Google tag (gtag.js) -->
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFW4BKKNPC"></script>
         <script>
@@ -10,7 +11,7 @@
 
             gtag('config', 'G-JFW4BKKNPC');
         </script>
-        
+
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
