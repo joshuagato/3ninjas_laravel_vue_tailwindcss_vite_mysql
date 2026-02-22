@@ -45,7 +45,7 @@
 
 {{-- Without the type="module" prop, the ref param couldn't get reset --}}
 <script type="module">
-    const apiUrl = "{{ env('VITE_APP_API_URL') }}";
+    const apiUrl = "{{ config('app.api_url') }}";
 
     (async function () {
         // 1. Capture the initial full URL with ref parameters immediately
