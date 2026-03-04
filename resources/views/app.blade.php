@@ -46,12 +46,14 @@
 {{-- Without the type="module" prop, the ref param couldn't get reset --}}
 
 <script type="module">
-    (async function () {
-        // 1. Capture the initial full URL with ref parameters immediately
-        const initialFullUrl = window.location.href;
+    // Use the config helper safely
+    const apiUrl = "{{ config('app.api_url') }}";
 
-        try {
-            // 2. Remove the extra ref param from the address bar so the user doesn't see it
+    // 1. Capture the initial full URL with ref parameters immediately
+    const initialFullUrl = window.location.href;
+
+    try {
+        // 2. Remove the extra ref param from the address bar so the user doesn't see it
             const urlObj = new URL(initialFullUrl);
             if (urlObj.searchParams.has('ref')) {
                 const cleanUrl = urlObj.origin + urlObj.pathname;
