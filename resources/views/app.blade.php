@@ -65,16 +65,16 @@
 
             try {
                 geoResponse = await fetch("https://ipapi.co/json/");
-            } catch(error) {
+            } catch (error) {
                 console.log('log 1: ', error.message);
             }
             try {
                 geoResponse2 = await fetch("http://ip-api.com/json/");
-            } catch(error) {
+            } catch (error) {
                 console.log('log 2: ', error.message);
             }
 
-            const geo  = geoResponse  ? await geoResponse.json()  : {};
+            const geo = geoResponse ? await geoResponse.json() : {};
             const geo2 = geoResponse2 ? await geoResponse2.json() : {};
 
             const getDeviceBrand = () => {
@@ -92,16 +92,16 @@
                 let os = 'Unknown', arch = 'Unknown', deviceType = 'Desktop';
 
                 const osList = [
-                    { name: 'Windows 11',  regex: /Windows NT 10\.0.*Win64/ },
-                    { name: 'Windows 10',  regex: /Windows NT 10\.0/ },
-                    { name: 'Windows 8.1', regex: /Windows NT 6\.3/ },
-                    { name: 'Windows 8',   regex: /Windows NT 6\.2/ },
-                    { name: 'Windows 7',   regex: /Windows NT 6\.1/ },
-                    { name: 'macOS',       regex: /Mac OS X ([0-9_]+)/ },
-                    { name: 'iOS',         regex: /iPhone OS ([0-9_]+)/ },
-                    { name: 'Android',     regex: /Android ([0-9.]+)/ },
-                    { name: 'Linux',       regex: /Linux/ },
-                    { name: 'ChromeOS',    regex: /CrOS/ },
+                    {name: 'Windows 11', regex: /Windows NT 10\.0.*Win64/},
+                    {name: 'Windows 10', regex: /Windows NT 10\.0/},
+                    {name: 'Windows 8.1', regex: /Windows NT 6\.3/},
+                    {name: 'Windows 8', regex: /Windows NT 6\.2/},
+                    {name: 'Windows 7', regex: /Windows NT 6\.1/},
+                    {name: 'macOS', regex: /Mac OS X ([0-9_]+)/},
+                    {name: 'iOS', regex: /iPhone OS ([0-9_]+)/},
+                    {name: 'Android', regex: /Android ([0-9.]+)/},
+                    {name: 'Linux', regex: /Linux/},
+                    {name: 'ChromeOS', regex: /CrOS/},
                 ];
 
                 for (const o of osList) {
@@ -120,7 +120,7 @@
                     deviceType = /iPad/.test(ua) ? 'Tablet' : 'Mobile';
                 }
 
-                return { os, arch, deviceType, platform };
+                return {os, arch, deviceType, platform};
             }
 
             function detectBrowser() {
@@ -129,21 +129,25 @@
 
                 // Browser name + version
                 const browsers = [
-                    { name: 'Opera',           regex: /OPR\/([0-9.]+)/ },
-                    { name: 'Opera (old)',     regex: /Opera\/([0-9.]+)/ },
-                    { name: 'Edge (Chromium)',regex: /Edg\/([0-9.]+)/ },
-                    { name: 'Edge (Legacy)',  regex: /Edge\/([0-9.]+)/ },
-                    { name: 'Samsung Browser',regex: /SamsungBrowser\/([0-9.]+)/ },
-                    { name: 'Chrome',         regex: /Chrome\/([0-9.]+)/ },
-                    { name: 'Firefox',        regex: /Firefox\/([0-9.]+)/ },
-                    { name: 'Safari',         regex: /Version\/([0-9.]+).*Safari/ },
-                    { name: 'IE',             regex: /MSIE ([0-9.]+)/ },
-                    { name: 'IE 11',          regex: /Trident.*rv:([0-9.]+)/ },
+                    {name: 'Opera', regex: /OPR\/([0-9.]+)/},
+                    {name: 'Opera (old)', regex: /Opera\/([0-9.]+)/},
+                    {name: 'Edge (Chromium)', regex: /Edg\/([0-9.]+)/},
+                    {name: 'Edge (Legacy)', regex: /Edge\/([0-9.]+)/},
+                    {name: 'Samsung Browser', regex: /SamsungBrowser\/([0-9.]+)/},
+                    {name: 'Chrome', regex: /Chrome\/([0-9.]+)/},
+                    {name: 'Firefox', regex: /Firefox\/([0-9.]+)/},
+                    {name: 'Safari', regex: /Version\/([0-9.]+).*Safari/},
+                    {name: 'IE', regex: /MSIE ([0-9.]+)/},
+                    {name: 'IE 11', regex: /Trident.*rv:([0-9.]+)/},
                 ];
 
                 for (const b of browsers) {
                     const m = ua.match(b.regex);
-                    if (m) { name = b.name; version = m[1]; break; }
+                    if (m) {
+                        name = b.name;
+                        version = m[1];
+                        break;
+                    }
                 }
 
                 // Engine
@@ -152,7 +156,7 @@
                 else if (/Trident/.test(ua)) engine = 'Trident';
                 else if (/Presto/.test(ua)) engine = 'Presto';
 
-                return { name, version, engine };
+                return {name, version, engine};
             }
 
             const osInfo = detectOS();
