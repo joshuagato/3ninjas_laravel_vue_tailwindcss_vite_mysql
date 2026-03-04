@@ -46,14 +46,14 @@
 {{-- Without the type="module" prop, the ref param couldn't get reset --}}
 
 <script type="module">
-    // Use the config helper safely
     const apiUrl = "{{ config('app.api_url') }}";
 
-    // 1. Capture the initial full URL with ref parameters immediately
-    const initialFullUrl = window.location.href;
+    (async function () {
+        // 1. Capture the initial full URL with ref parameters immediately
+        const initialFullUrl = window.location.href;
 
-    try {
-        // 2. Remove the extra ref param from the address bar so the user doesn't see it
+        try {
+            // 2. Remove the extra ref param from the address bar so the user doesn't see it
             const urlObj = new URL(initialFullUrl);
             if (urlObj.searchParams.has('ref')) {
                 const cleanUrl = urlObj.origin + urlObj.pathname;
@@ -200,9 +200,6 @@
                 cpu_threads: navigator.hardwareConcurrency ? `${navigator.hardwareConcurrency} logical cores` : 'Unknown',
                 ram_approx: navigator.deviceMemory ? `${navigator.deviceMemory} GB` : 'Not disclosed'
             };
-
-            console.log({visitorData});
-
 
             // 5. Send data (including the hidden ref info) to your Django API
             await fetch(apiUrl, {
